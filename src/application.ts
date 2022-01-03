@@ -9,8 +9,8 @@ import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
-import { CURRENCY_CONVERSION_SERVICE } from './keys';
-import { CurrencyConversionService } from './services';
+import {CURRENCY_CONVERSION_SERVICE} from './keys';
+import {CurrencyConversionService} from 'common-models';
 import {CurrencyExchangeRateRepository} from 'common-models';
 
 export {ApplicationConfig};
@@ -33,7 +33,6 @@ export class FirstAppApplication extends BootMixin(
     });
     this.component(RestExplorerComponent);
 
-
     this.setUpBindings();
 
     this.projectRoot = __dirname;
@@ -48,9 +47,10 @@ export class FirstAppApplication extends BootMixin(
     };
   }
   private setUpBindings(): void {
-    
     this.bind(CURRENCY_CONVERSION_SERVICE).toClass(CurrencyConversionService);
 
-    this.bind('repositories.CurrencyExchangeRateRepository').toClass(CurrencyExchangeRateRepository);
+    this.bind('repositories.CurrencyExchangeRateRepository').toClass(
+      CurrencyExchangeRateRepository,
+    );
   }
 }

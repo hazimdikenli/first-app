@@ -3,7 +3,7 @@ import {get, param, post} from '@loopback/rest';
 import {CurrencyExchangeRateRepository} from 'common-models';
 import {inject} from '@loopback/core';
 import { CURRENCY_CONVERSION_SERVICE } from '../keys';
-import { CurrencyConversionService } from '../services';
+import { CurrencyConversionService } from 'common-models';
 
 //const debug = require('debug')('tramas-app:CurrencyExchangeRateController');
 
