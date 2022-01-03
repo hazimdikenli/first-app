@@ -11,6 +11,7 @@ import path from 'path';
 import {MySequence} from './sequence';
 import { CURRENCY_CONVERSION_SERVICE } from './keys';
 import { CurrencyConversionService } from './services';
+import {CurrencyExchangeRateRepository} from 'common-models';
 
 export {ApplicationConfig};
 
@@ -50,5 +51,6 @@ export class FirstAppApplication extends BootMixin(
     
     this.bind(CURRENCY_CONVERSION_SERVICE).toClass(CurrencyConversionService);
 
+    this.bind('repositories.CurrencyExchangeRateRepository').toClass(CurrencyExchangeRateRepository);
   }
 }
