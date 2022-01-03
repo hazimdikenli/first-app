@@ -1,2 +1,2 @@
 export * from './additional-code.repository';
-export * from './currency-exchange-rate.repository';
+//export * from 'common-models/src/repositories/currency-exchange-rate.repository';

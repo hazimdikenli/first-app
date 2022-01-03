@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import {inject} from '@loopback/core';
 import {repository} from '@loopback/repository';
-import {CurrencyExchangeRate} from '../models';
-import {CurrencyExchangeRateRepository} from '../repositories';
-
+import {CurrencyExchangeRate, CurrencyExchangeRateRepository} from 'common-models';
 type CurrencyCode = 'TRY' | 'GBP' | 'USD' | 'EUR' | string;
 
 /* this service just uses TCMB - Turkish Central Bank Rates at the moment
