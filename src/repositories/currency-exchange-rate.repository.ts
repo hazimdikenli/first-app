@@ -1,7 +1,7 @@
 import {DefaultCrudRepository} from '@loopback/repository';
-import {CurrencyExchangeRate, CurrencyExchangeRateRelations} from '../models';
 import {MyLocalDbDataSource} from '../datasources';
 import {inject} from '@loopback/core';
+import { CurrencyExchangeRate, CurrencyExchangeRateRelations } from 'common-models';
 
 export class CurrencyExchangeRateRepository extends DefaultCrudRepository<
   CurrencyExchangeRate,
