@@ -36,6 +36,7 @@ export class FirstAppApplication extends BootMixin(
     this.setUpBindings();
 
     this.projectRoot = __dirname;
+    
     // Customize @loopback/boot Booter Conventions here
     this.bootOptions = {
       controllers: {
@@ -43,6 +44,14 @@ export class FirstAppApplication extends BootMixin(
         dirs: ['controllers'],
         extensions: ['.controller.js'],
         nested: true,
+      },
+      // this is not working, we still need to bind for the repository
+      repositories: {
+        dirs: [
+          'repositories',
+          'node_modules/common-models/dist/repositories',
+          '../../../packages/common-models/dist/repositories',
+        ],
       },
     };
   }
